@@ -1,0 +1,13 @@
+
+class Intervalo {
+	
+	public double longitud()
+	public void desplazar(double desplazamiento)
+	public Intervalo desplazado(double desplazamiento)
+	public boolean incluye(double punto)
+	public boolean equals(Intervalo intervalo)
+	public Intervalo interseccion(Intervalo intervalo)
+	
+	
+
+}
