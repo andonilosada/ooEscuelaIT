@@ -1,4 +1,3 @@
-
 class Intervalo {
 	
 	private double puntoMedio;
@@ -77,7 +76,7 @@ class Intervalo {
 	
 	public void mostrar() {
 		
-		//System.out.println("["+ inferior + "," + superior + "]");
+		System.out.println('['+ puntoMedio - longitud/2 + ',' + puntoMedio + longitud/2 + ']');
 	}
 	
 	public void doblar() {
@@ -86,4 +85,10 @@ class Intervalo {
 		
 	}
 	
+	public boolean incluye(double valor) {
+
+		return Math.abs(valor - puntoMedio) < longitud / 2; 
+	}
+	
 }
+
