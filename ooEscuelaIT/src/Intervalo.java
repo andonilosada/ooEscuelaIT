@@ -1,3 +1,4 @@
+
 class Intervalo {
 	
 	private double puntoMedio;
@@ -9,7 +10,9 @@ class Intervalo {
 		
 		longitud = superior - inferior;
 		puntoMedio = inferior + longitud/2;
-	
+		
+		System.out.println("Longitud= " + longitud);
+		System.out.println("Punto Medio = " + puntoMedio);
 	}
 	
 	public Intervalo(Intervalo intervalo) {
@@ -76,7 +79,7 @@ class Intervalo {
 	
 	public void mostrar() {
 		
-		System.out.println('['+ puntoMedio - longitud/2 + ',' + puntoMedio + longitud/2 + ']');
+		System.out.println("Intervalo => " + "["+ (puntoMedio - longitud/2) + "," + (puntoMedio + longitud/2) + "]");
 	}
 	
 	public void doblar() {
@@ -91,4 +94,3 @@ class Intervalo {
 	}
 	
 }
-
