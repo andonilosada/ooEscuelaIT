@@ -1,8 +1,9 @@
+  
 import java.sql.Date;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.StringTokenizer;
-
+import java.time.*;
 
 public class Fecha {
 	
@@ -19,7 +20,7 @@ public class Fecha {
 ///////////////////////////////////////////////////////////// CONSTRUCTORES
 	
 	public Fecha(int dia, int mes, int año) {
-		this.set(dia, mes, año);
+	System.out.println("La fecha actual es: " + LocalDate.now());
 	}
 	
 	public Fecha(Fecha fecha) {
@@ -131,19 +132,23 @@ public class Fecha {
 		cal.setTime(d);
 		return cal.get(Calendar.DAY_OF_WEEK);		
 	}
+	
+	//TE DA EL MÁXIMO DIA DEL MES, CONTROLANDO BISIESTOS
+	public int dameMaximoDiasEnMes(int año, int mes) {
+	    GregorianCalendar gc = new GregorianCalendar();
+	    gc.set(Calendar.YEAR,año);
+	    gc.set(Calendar.MONTH,mes-1); //ojo, enero es cero, por eso resto uno
+	    return gc.getActualMaximum(Calendar.DATE);
+	}
 
 	
 /////////////////////////////////////////////////////////////// MÉTODO MAIN
 	
 	public static void main(String[] args) {
+		System.out.println("Día de la semana actual: " + LocalDate.now().getDayOfWeek());
+		System.out.println("Dia de la semana: " + LocalDate.of(1964,12,30).getDayOfWeek());
+		Fecha fecha = new Fecha(1, 2, 2020);
+		System.out.println(fecha.dameMaximoDiasEnMes(2021, 2));
 		
-		//Fecha fecha = new Fecha(25,06,1962);
-		System.out.println(Fecha.isLeapYear(2020));
 	}
 }
-
-
-
-
-
-

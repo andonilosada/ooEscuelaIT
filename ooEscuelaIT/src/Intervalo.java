@@ -1,5 +1,4 @@
 
-
 class Intervalo {
 	
 	private double inferior;
@@ -63,11 +62,11 @@ class Intervalo {
 		assert this.isIntersecta(intervalo);
 		if(this.isIntersecta(intervalo)) {
 			return intervalo.clone();
-		} else if(intervalo.isIntersecta(this)) {
+		}else if(intervalo.isIntersecta(this)) {
 			return this.clone();
-		} else if(this.incluye(intervalo.inferior)) {
+		}else if(this.incluye(intervalo.inferior)) {
 			return new Intervalo(intervalo.inferior, superior);
-		} else { 
+		}else { 
 			return new Intervalo(inferior, intervalo.superior);
 		}	
 	}
@@ -83,17 +82,8 @@ class Intervalo {
 		return null;
 	}
 	
-	public void recoger() {
-		GestorIO gestorIO = new GestorIO();
-		gestorIO.out("Inferior >> ");
-		inferior = gestorIO.inDouble();
-		gestorIO.out("Superior >> ");
-		superior = gestorIO.inDouble();
-		
-	}
-	
 	public void mostrar() {
-		new GestorIO().out("Intervalo => " + "["+ inferior + "," + superior + "]");
+		System.out.println("Intervalo => " + "["+ inferior + "," + superior + "]");
 	}
 	
 	public void doblar() {
